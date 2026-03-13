@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: tmt
-        image: tmt-monitor:latest  # Replace with your actual image name/tag
+        image: tmt-service:latest
+        imagePullPolicy: Never
         env:
         - name: SUBWAY_LINE
           value: "L"

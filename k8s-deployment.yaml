@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tmt-monitor
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tmt-monitor
+  template:
+    metadata:
+      labels:
+        app: tmt-monitor
+    spec:
+      containers:
+      - name: tmt
+        image: tmt-monitor:latest  # Replace with your actual image name/tag
+        env:
+        - name: SUBWAY_LINE
+          value: "L"
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi

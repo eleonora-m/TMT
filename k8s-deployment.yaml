@@ -15,7 +15,7 @@ spec:
       containers:
       - name: tmt
         image: tmt-service:latest
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         env:
         - name: SUBWAY_LINE
           value: "L"
